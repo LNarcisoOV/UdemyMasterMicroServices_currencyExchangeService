@@ -2,8 +2,15 @@ package com.udemy.currencyexchangeservice.model;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.transaction.Transactional;
+
+
+@Entity
 public class ExchangeValue {
 
+	@Id
 	private Long id;
 	private String personalCurrency;
 	private String newCurrency;
