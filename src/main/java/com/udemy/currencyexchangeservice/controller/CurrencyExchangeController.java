@@ -25,7 +25,7 @@ public class CurrencyExchangeController {
 	public ExchangeValue retrieveExchangeValue(@PathVariable String personalCurrency,
 			@PathVariable String newCurrency) {
 
-		ExchangeValue exchangeValue = exchangeValueRepository.findBy(personalCurrency, newCurrency);
+		ExchangeValue exchangeValue = exchangeValueRepository.findByPersonalCurrencyAndNewCurrency(personalCurrency, newCurrency);
 
 		if (exchangeValue == null) {
 			throw new ExchangeValueNotFoundException("Exchange value not found");
