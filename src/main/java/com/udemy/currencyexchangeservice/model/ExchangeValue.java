@@ -8,6 +8,7 @@ public class ExchangeValue {
 	private String personalCurrency;
 	private String newCurrency;
 	private BigDecimal conservionMultiple;
+	private int port;
 
 	public ExchangeValue() {
 		super();
@@ -54,8 +55,12 @@ public class ExchangeValue {
 		this.conservionMultiple = conservionMultiple;
 	}
 
-	public static double doTheCurrencyExchange(String personalCurrency, String newCurrency) {
-		return 1.3;
+	public int getPort() {
+		return port;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
 	}
 
 }
