@@ -12,7 +12,6 @@ import com.udemy.currencyexchangeservice.model.ExchangeValue;
 import com.udemy.currencyexchangeservice.repository.ExchangeValueRepository;
 
 @RestController
-@RequestMapping("/currencyExchange")
 public class CurrencyExchangeController {
 
 	@Autowired
@@ -21,11 +20,11 @@ public class CurrencyExchangeController {
 	@Autowired
 	private ExchangeValueRepository exchangeValueRepository;
 
-	@GetMapping("/from/{personalCurrency}/to/{newCurrency}")
-	public ExchangeValue retrieveExchangeValue(@PathVariable String personalCurrency,
-			@PathVariable String newCurrency) {
+	@GetMapping("/from/{fromCurrency}/to/{toCurrency}")
+	public ExchangeValue retrieveExchangeValue(@PathVariable String fromCurrency,
+			@PathVariable String toCurrency) {
 
-		ExchangeValue exchangeValue = exchangeValueRepository.findByPersonalCurrencyAndNewCurrency(personalCurrency, newCurrency);
+		ExchangeValue exchangeValue = exchangeValueRepository.findByFromCurrencyAndToCurrency(fromCurrency, toCurrency);
 
 		if (exchangeValue == null) {
 			throw new ExchangeValueNotFoundException("Exchange value not found");

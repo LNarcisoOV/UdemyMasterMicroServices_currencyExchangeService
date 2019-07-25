@@ -5,14 +5,13 @@ import java.math.BigDecimal;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-
 @Entity
 public class ExchangeValue {
 
 	@Id
 	private Long id;
-	private String personalCurrency;
-	private String newCurrency;
+	private String fromCurrency;
+	private String toCurrency;
 	private BigDecimal conservionMultiple;
 	private int port;
 
@@ -20,12 +19,11 @@ public class ExchangeValue {
 		super();
 	}
 
-	public ExchangeValue(Long id, String personalCurrency, String newCurrency,
-			BigDecimal conservionMultiple) {
+	public ExchangeValue(Long id, String fromCurrency, String toCurrency, BigDecimal conservionMultiple) {
 		super();
 		this.id = id;
-		this.personalCurrency = personalCurrency;
-		this.newCurrency = newCurrency;
+		this.fromCurrency = fromCurrency;
+		this.toCurrency = toCurrency;
 		this.conservionMultiple = conservionMultiple;
 	}
 
@@ -37,20 +35,20 @@ public class ExchangeValue {
 		this.id = id;
 	}
 
-	public String getPersonalCurrency() {
-		return personalCurrency;
+	public String getFromCurrency() {
+		return fromCurrency;
 	}
 
-	public void setPersonalCurrency(String personalCurrency) {
-		this.personalCurrency = personalCurrency;
+	public void setFromCurrency(String fromCurrency) {
+		this.fromCurrency = fromCurrency;
 	}
 
-	public String getNewCurrency() {
-		return newCurrency;
+	public String getToCurrency() {
+		return toCurrency;
 	}
 
-	public void setNewCurrency(String newCurrency) {
-		this.newCurrency = newCurrency;
+	public void setToCurrency(String toCurrency) {
+		this.toCurrency = toCurrency;
 	}
 
 	public BigDecimal getConservionMultiple() {
