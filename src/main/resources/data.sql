@@ -10,3 +10,5 @@ insert into exchange_value(id, from_currency, to_currency, conservion_multiple, 
 values(10005, 'BRL', 'JPY', 2.2, 0);
 insert into exchange_value(id, from_currency, to_currency, conservion_multiple, port) 
 values(10006, 'BRL', 'CHF', 3.0, 0);
+insert into exchange_value(id, from_currency, to_currency, conservion_multiple, port) 
+values(10007, 'EUR', 'BRL', 4.3, 0);
